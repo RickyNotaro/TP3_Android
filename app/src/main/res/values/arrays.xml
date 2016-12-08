@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="tab_activites">
+        <item>Calculer un prêt</item>
+        <item>Identifier un conifère</item>
+        <item>Nom de la troisième activité</item>
+        </string-array>
+
+    <string-array name="tab_duree">
+        <item>12 mois</item>
+        <item>24 mois</item>
+        <item>36 mois</item>
+        <item>48 mois</item>
+        <item>60 mois</item>
+        <item>72 mois</item>
+        <item>84 mois</item>
+    </string-array>
+
+    <string-array name="tab_choix_aiguilles">
+        <item>Aiguilles attachées une par une au rameau</item>
+        <item>Aiguilles regroupées en faisceaux</item>
+        <item>Écailles</item>
+    </string-array>
+
+    <string-array name="tab_choix_sous_titres">
+        <item>Aiguilles une par une</item>
+        <item>Aiguilles en faisceaux</item>
+        <item>Écailles</item>
+    </string-array>
+
+    <string-array name="tab_aiguilles_une">
+        <item>ÉPINETTE.\n\nAiguilles courtes\n(1 à 2 cm de longueur),\nsouvent de forme presque carrée,\nplacées en spirale tout autour du rameau.</item>
+        <item>SAPIN BAUMIER.\n\nAiguilles aplaties\n(2 à 4 cm de longueur),\nplacées souvent en rangées\nsur les côtés du rameau.</item>
+    </string-array>
+
+    <string-array name="tab_aiguilles_faisceaux">
+        <item>PIN GRIS (CYPRÈS).\n\n2 aiguilles par faisceau,\n2 à 3 cm de longueur.</item>
+        <item>PIN ROUGE.\n\n2 aiguilles par faisceau,\n10 à 15 cm de longueur.</item>
+        <item>PIN BLANC.\n\nAiguilles groupées par 5.</item>
+        <item>MÉLÈZE.\n\nAiguilles courtes\n(1 à 2 cm de longueur),\nen touffes de 10 à 25 aiguilles.\nCe conifère perd\nses aiguilles en hiver.</item>
+    </string-array>
+
+    <string-array name="tab_ecailles">
+        <item>CÈDRE (THUYA).\n\nAiguilles remplacées\npar des écailles plates.</item>
+        <item>GENÉVRIER.\n\nAiguilles remplacées\npar des écailles arrondies.</item>
+    </string-array>
+
+    <string-array name="tab_images_aiguilles_une">
+        <item>img_aiguilles_epinette</item>
+        <item>img_aiguilles_sapin</item>
+    </string-array>
+
+    <string-array name="tab_images_aiguilles_faisceaux">
+        <item>img_aiguilles_pin_gris</item>
+        <item>img_aiguilles_pin_rouge</item>
+        <item>img_aiguilles_pin_blanc</item>
+        <item>img_aiguilles_meleze</item>
+    </string-array>
+
+    <string-array name="tab_images_ecailles">
+        <item>img_ecailles_cedre</item>
+        <item>img_ecailles_genevrier</item>
+    </string-array>
+    
+    <string-array name="tab_coniferes_aiguilles_une">
+        <item>Épinette</item>
+        <item>Sapin baumier</item>
+    </string-array>
+
+    <string-array name="tab_coniferes_aiguilles_faisceaux">
+        <item>Pin gris (cyprès)</item>
+        <item>Pin rouge</item>
+        <item>Pin blanc</item>
+        <item>Mélèze</item>
+    </string-array>
+
+    <string-array name="tab_coniferes_ecailles">
+        <item>Cèdre (Thuya)</item>
+        <item>Genévrier</item>
+    </string-array>
+    
+    <string-array name="tab_images_coniferes_aiguilles_une">
+        <item>img_epinette</item>
+        <item>img_sapin</item>
+    </string-array>
+
+    <string-array name="tab_images_coniferes_aiguilles_faisceaux">
+        <item>img_pin_gris</item>
+        <item>img_pin_rouge</item>
+        <item>img_pin_blanc</item>
+        <item>img_meleze</item>
+    </string-array>
+
+    <string-array name="tab_images_coniferes_ecailles">
+        <item>img_cedre</item>
+        <item>img_genevrier</item>
+    </string-array>
+
+    <string-array name="tab_web_coniferes_aiguilles_une">
+        <item>https://fr.wikipedia.org/wiki/Picea</item>
+        <item>https://fr.wikipedia.org/wiki/Sapin_baumier</item>
+    </string-array>
+
+    <string-array name="tab_web_coniferes_aiguilles_faisceaux">
+        <item>https://fr.wikipedia.org/wiki/Pin_gris</item>
+        <item>https://fr.wikipedia.org/wiki/Pin_rouge</item>
+        <item>https://fr.wikipedia.org/wiki/Pinus_strobus</item>
+        <item>https://fr.wikipedia.org/wiki/Mélèze</item>
+    </string-array>
+
+    <string-array name="tab_web_coniferes_ecailles">
+        <item>https://fr.wikipedia.org/wiki/Thuya</item>
+        <item>https://fr.wikipedia.org/wiki/Genévrier</item>
+    </string-array>
+
+</resources>

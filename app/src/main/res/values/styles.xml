@@ -1,0 +1,29 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="base_texte">
+        <item name="android:textSize">@dimen/taille_texte</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="Editlabels">
+        <item name="android:textSize">@dimen/taille_editLabel</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="Titre" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/colorTitle</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/taille_titre</item>
+    </style>
+
+
+</resources>

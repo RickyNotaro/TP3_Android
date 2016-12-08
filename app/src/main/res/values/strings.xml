@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">TP3_254</string>
+
+    <string name="action_accueil">Accueil</string>
+    <string name="action_aide">Aide</string>
+
+    <string name="txt_alertdialog_ok">OK</string>
+
+    <string name="erreur_chargement_web">Erreur! Chargement contenu web.</string>
+
+
+    <string name="accueil_activites">Application contenant\nplusieurs activités</string>
+    <string name="desc_img_accueil">Image de l\'application</string>
+
+    <string name="ouvrir_menu">Ouvrir menu des activités</string>
+    <string name="fermer_menu">Fermer menu des activités</string>
+
+    <string name="aide_accueil">Choisissez une activité parmi celles proposées dans le menu en haut à gauche.</string>
+    <string name="aide_infos_pret">Consulter les résultats du prêt.\n\nBouton Retour pour revenir à l\'écran précédent.\n\nIcône pour revenir à l\'écran d\'accueil.\n\nMenu en haut à gauche pour choisir une activité.</string>
+    <string name="aide_conifere">Observez-bien les aiguilles et faites votre choix.\n\nLe conifère est affiché lorsqu\'il est identifié. Peut alors afficher une page web.\n\nIcône pour revenir à l\'écran d\'accueil.\n\nMenu en haut à gauche pour choisir une activité.</string>
+    <string name="aide_choix_conifere">Observez-bien les aiguilles et faites votre choix.\n\nBouton Retour pour revenir à l\'écran précédent.\n\nIcône pour revenir à l\'écran d\'accueil.\n\nMenu en haut à gauche pour choisir une activité.</string>
+    <string name="aide_web_conifere">Consulter la page web du conifère.\n\nBouton Back pour revenir à l\'écran précédent.\n\nIcône pour revenir à l\'écran d\'accueil.\n\nMenu en haut à gauche pour choisir une activité.</string>
+
+    <string name="warning_infos_pret">Entrez toutes les informations.\nLes valeurs doivent être supérieures à 0.</string>
+    <string name="aide_pret">Entrez toutes les informations.\n\nBouton Calculer pour afficher les résultats du prêt.\n\nIcône pour revenir à l\'écran d\'accueil.\n\nMenu en haut à gauche pour choisir une activité.</string>
+
+    <string name="titre_conifere">Identifier un conifère</string>
+    <string name="sous_titre_conifere">Les conifères ont des feuilles en forme d\'aiguille ou d\'écaille.</string>
+    <string name="prompt_choix_aiguilles">Choisissez la forme appropriée.</string>
+    <string name="desc_image_arbre">Image du conifere identifié</string>
+    <string name="mess_res_arbre">Conifère identifié :</string>
+    <string name="prompt_choix_conifere">Choisissez le conifère approprié</string>
+
+    <string name="titre_pret">Calculer un prêt</string>
+    <string name="titre_montant">Montant du prêt\n(en $)</string>
+    <string name="hint_montant">Entrez le montant</string>
+    <string name="titre_interet">Taux d\'intérêt annuel\n(en %)</string>
+    <string name="hint_interet">Entrez le taux d\'intérêt</string>
+    <string name="titre_duree">Durée du prêt</string>
+
+    <string name="titre_infos_pret">Renseignements sur le prêt</string>
+    <string name="sous_titre_infos_pret">Infos sur le prêt</string>
+    <string name="titre_info_montant">Montant du prêt (en $)</string>
+    <string name="titre_info_interet">Taux d\'intérêt annuel (en %)</string>
+    <string name="titre_info_duree">Durée du prêt (en mois)</string>
+    <string name="titre_versement">Versement mensuel (en $)</string>
+    <string name="titre_interet_total">Intérêt total (en $)</string>
+    <string name="titre_pret_total">Prêt total (en $)</string>
+
+    <string name="txt_btn_calculer">Calculer</string>
+    <string name="txt_btn_effacer">Effacer</string>
+    <string name="txt_btn_retour">Retour</string>
+
+    <string name="choix_effacer_montant">Effacer le montant</string>
+    <string name="choix_effacer_interet">Effacer l\'intérêt</string>
+    <string name="choix_effacer_montant_interet">Effacer le montant et l\'intérêt</string>
+
+</resources>
