@@ -1,7 +1,9 @@
 package com.rickynotaro.android.tp3;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
@@ -18,7 +20,7 @@ import android.widget.Toast;
 public class ConifereActivity extends AppCompatActivity {
 
     // Récupérer le nom du package.
-    public static final String NOM_PACKAGE = MainActivity.class.getPackage().getName();
+    public static final String NOM_PACKAGE = ConifereActivity.class.getPackage().getName();
 
     public static final String CLE_CHOIX = NOM_PACKAGE + ".CHOIX";
     public static final int REQUETE_CHOIX_CONIFERE = 1;
@@ -26,6 +28,7 @@ public class ConifereActivity extends AppCompatActivity {
     private ListView listeNavigation;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
+    private Resources res;
 
     private ListView idListeChoix;
     private TextView idResultat;
@@ -45,6 +48,7 @@ public class ConifereActivity extends AppCompatActivity {
     }
 
     private void recupererComposants() {
+        res = getResources();
         idListeChoix = (ListView) findViewById( R.id.listview_Choix );
         idResultat = (TextView) findViewById( R.id.item_conifere );
         idListeChoix.setOnItemClickListener(ecouterListViewConifere);
@@ -64,7 +68,7 @@ public class ConifereActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(drawerToggle);
 
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-
+        actionBar.setSubtitle(R.string.titre_conifere);
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
@@ -86,7 +90,7 @@ public class ConifereActivity extends AppCompatActivity {
                     //La nouvelle intention contient le contexte de l'activité
                     // appelant et le nom de l'activité.
                     Intent intent = new Intent(ConifereActivity.this, ConifereDeuxActivity.class);
-                    intent.putExtra(CLE_CHOIX,position);
+                    intent.putExtra(CLE_CHOIX, position);
                     startActivityForResult(intent,REQUETE_CHOIX_CONIFERE);
                 }
             };
@@ -127,6 +131,21 @@ public class ConifereActivity extends AppCompatActivity {
 
             };
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data ){
+        if (requestCode == REQUETE_CHOIX_CONIFERE){
+            if (resultCode == Activity.RESULT_OK){
+            //ConifereDeuxActivity.CLE_NOM
+                idResultat.setText(R.string.mess_res_arbre + getIntent().getStringExtra(ConifereDeuxActivity.CLE_NOM));
+               // idResultat.setCompoundDrawablesWithIntrinsicBounds( getIntent().getStringExtra(ConifereDeuxActivity.CLE_IMAGE), 0, 0, 0 );
+                // TODO: 2016-12-09 Document 14 page 34 && PDF page 21. (Récupérer les données et les afficher dans le textview.
+            }else {
+
+            }
+
+        }
+    }
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState){
