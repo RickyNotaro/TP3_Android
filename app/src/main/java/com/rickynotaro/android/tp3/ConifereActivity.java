@@ -79,6 +79,7 @@ public class ConifereActivity extends AppCompatActivity {
         idListeChoix.setOnItemClickListener(ecouterListViewConifere);
     }
 
+    // Récupères les éléments du drawer et l'active
     private void preparerDrawer() {
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -125,6 +126,7 @@ public class ConifereActivity extends AppCompatActivity {
                 }
             };
 
+    // Éc
     private AdapterView.OnItemClickListener ecouterListeNavigation =
             new AdapterView.OnItemClickListener() {
                 @Override
@@ -149,7 +151,7 @@ public class ConifereActivity extends AppCompatActivity {
                             break;
 
                         case 2:
-
+                            intent = new Intent(ConifereActivity.this, Activite_3.class);
                             break;
 
                         default:
@@ -176,6 +178,9 @@ public class ConifereActivity extends AppCompatActivity {
                 idResultat.setOnClickListener(ecouterTextViewConifere);
             } else {
                 idResultat.setText("");
+                nomConifere = null;
+                nomResConifere = null;
+                lienConifere = null;
                 idResultat.setCompoundDrawablesWithIntrinsicBounds(
                         android.R.color.transparent, 0, 0, 0);
             }
@@ -183,6 +188,31 @@ public class ConifereActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState){
+        if (nomConifere != null && nomResConifere != null && lienConifere != null){
+            savedInstanceState.putString("nomConifere", nomConifere);
+            savedInstanceState.putString("nomResConifere", nomResConifere);
+            savedInstanceState.putString("lienConifere", lienConifere);
+        }
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+
+        nomConifere = savedInstanceState.getString("nomConifere");
+        nomResConifere = savedInstanceState.getString("nomResConifere");
+        lienConifere = savedInstanceState.getString("lienConifere");
+
+        if (nomConifere != null && nomResConifere != null && lienConifere != null){
+            String texte = (res.getString(R.string.mess_res_arbre) + "\n\n" + nomConifere);
+            int resId = res.getIdentifier(nomResConifere, "drawable", getPackageName());
+            idResultat.setText(texte);
+            idResultat.setCompoundDrawablesWithIntrinsicBounds(resId, 0, 0, 0);
+            idResultat.setOnClickListener(ecouterTextViewConifere);
+        }
+    }
 
     private View.OnClickListener ecouterTextViewConifere = new View.OnClickListener() {
         @Override

@@ -1,25 +1,25 @@
 package com.rickynotaro.android.tp3;
 
 /**
- * Auteurs : Ricky Notaro-Garcia
- * Fichier : ConifereActivity.java
- * Date    : 12 décembre 2016
+ * Created by rnotaro on 2016-12-12.
+ * Fichier : Activite_3_2.java
  * Cours   : 420-254-MO (TP3 Android)
  */
 
 /**
- * Classe Activity gérant la WebView des conifères".
- **
+ * Classe contenant l'activité du WebView des réseaux sociaux.
  */
+
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,8 +33,19 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+/**
+ * Auteurs : Ricky Notaro-Garcia
+ * Fichier : ConifereActivity.java
+ * Date    : 12 décembre 2016
+ * Cours   : 420-254-MO (TP3 Android)
+ */
 
-public class ConifereWikiActivity extends AppCompatActivity {
+/**
+ * Classe Activity gérant la WebView des conifères".
+ **
+ */
+
+public class Activite_3_2 extends AppCompatActivity {
 
     private ListView listeNavigation;
     private DrawerLayout drawerLayout;
@@ -45,6 +56,16 @@ public class ConifereWikiActivity extends AppCompatActivity {
 
     private Resources res;
     private Intent intent;
+
+    private static final String[] TAB_LIENS = {
+            "https://facebook.com",
+            "https://twitter.com",
+            "https://tumblr.com/",
+            "https://www.reddit.com/",
+            "https://www.instagram.com/",
+            "https://www.linkedin.com/"
+    };
+
 
     private WebView vueWeb;
     private WebSettings param;
@@ -126,8 +147,8 @@ public class ConifereWikiActivity extends AppCompatActivity {
 
     private void recupererComposants() {
         intent = getIntent();
-        sousTitre = intent.getStringExtra(ConifereActivity.CLE_NOM);
-        url = intent.getStringExtra(ConifereActivity.CLE_LIENWEB);
+        sousTitre = intent.getStringExtra(Activite_3.CLE_RESEAU);
+        url = TAB_LIENS[intent.getIntExtra(Activite_3.CLE_POSITION,0)];
         res = getResources();
         vueWeb = (WebView) findViewById(R.id.vueWeb);
     }
@@ -147,15 +168,15 @@ public class ConifereWikiActivity extends AppCompatActivity {
                     Intent intent = null;
                     switch (position){
                         case 0:
-                            intent = new Intent(ConifereWikiActivity.this, Calculer_acceuil.class);
+                            intent = new Intent(Activite_3_2.this, Calculer_acceuil.class);
                             break;
 
                         case 1:
-                            intent = new Intent(ConifereWikiActivity.this, ConifereActivity.class);
+                            intent = new Intent(Activite_3_2.this, ConifereActivity.class);
                             break;
 
                         case 2:
-                            intent = new Intent(ConifereWikiActivity.this, Activite_3.class);
+                            intent = new Intent(Activite_3_2.this, Activite_3.class);
                             break;
 
                         default:
@@ -184,7 +205,7 @@ public class ConifereWikiActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.menuAccueil:
-                Intent intent = new Intent(ConifereWikiActivity.this, MainActivity.class);
+                Intent intent = new Intent(Activite_3_2.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
 
@@ -193,11 +214,11 @@ public class ConifereWikiActivity extends AppCompatActivity {
                 break;
 
             case R.id.menuAide:
-                AlertDialog.Builder boiteAlerte = new AlertDialog.Builder(ConifereWikiActivity.this);
+                AlertDialog.Builder boiteAlerte = new AlertDialog.Builder(Activite_3_2.this);
 
                 boiteAlerte.setTitle(R.string.action_aide);
                 boiteAlerte.setIcon(R.drawable.ic_info_aide);
-                boiteAlerte.setMessage(R.string.aide_web_conifere);
+                boiteAlerte.setMessage(R.string.aide_web_social);
                 boiteAlerte.setPositiveButton(R.string.txt_alertdialog_ok, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

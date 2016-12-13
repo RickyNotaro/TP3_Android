@@ -214,7 +214,6 @@ private AdapterView.OnItemClickListener ecouterListeNavigation = new AdapterView
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = null;
-        String itemChoisi = parent.getItemAtPosition(position).toString();
 
         switch (position) {
             case 0:
@@ -222,6 +221,8 @@ private AdapterView.OnItemClickListener ecouterListeNavigation = new AdapterView
                 break;
             case 1:
                 intent = new Intent(Calculer_acceuil.this, ConifereActivity.class);
+            case 2:
+                intent = new Intent(Calculer_acceuil.this, Activite_3.class);
         }
         if (intent != null){
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -231,6 +232,7 @@ private AdapterView.OnItemClickListener ecouterListeNavigation = new AdapterView
         drawerLayout.closeDrawers();
     }
 };
+
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);

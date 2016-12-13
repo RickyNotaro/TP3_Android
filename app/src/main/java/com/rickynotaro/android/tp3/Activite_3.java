@@ -2,6 +2,7 @@ package com.rickynotaro.android.tp3;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
@@ -11,32 +12,35 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-/**
- * Auteurs : Ricky Notaro-Garcia
- * Fichier : ConifereActivity.java
- * Date    : 12 décembre 2016
- * Cours   : 420-254-MO (TP3 Android)
- */
-
-/**
- * Classe MainActivity contenant la page d'accueil de l'application".
- *
- */
-
-public class MainActivity extends AppCompatActivity {
+public class Activite_3 extends AppCompatActivity {
 
     private ListView listeNavigation;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
+    private Button boutonOuvrire;
+    private Spinner spinnerReseaux;
+    // Récupérer le nom du package.
+    public static final String NOM_PACKAGE = ConifereActivity.class.getPackage().getName();
+
+    // Contient les différents clé de l'intent.
+    public static final String CLE_RESEAU = NOM_PACKAGE + ".RESEAU";
+    public static final String CLE_POSITION = NOM_PACKAGE + ".POSITION";
+
+    private String reseaux_Choisi;
+    private Resources res;
+    private String nomReseau;
+    private int positions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activite_3);
 
         // Debut Drawer
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(drawerToggle);
 
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(R.string.sous_titre_activite3);
 
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -59,42 +64,62 @@ public class MainActivity extends AppCompatActivity {
         listeNavigation.setOnItemClickListener(ecouterListeNavigation);
 
         // Fin Drawer
+
+        boutonOuvrire = (Button)findViewById(R.id.bouton_ouvrir_page);
+        spinnerReseaux = (Spinner)findViewById(R.id.spinner_reseaux);
+        spinnerReseaux.setOnItemSelectedListener(ecouterSpinner);
+        boutonOuvrire.setOnClickListener(ecouterBoutonOuvrir);
+
     }
 
+    private AdapterView.OnClickListener ecouterBoutonOuvrir = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(Activite_3.this,Activite_3_2.class);
+            intent.putExtra(CLE_RESEAU,nomReseau);
+            intent.putExtra(CLE_POSITION,positions);
+            res = getResources();
+            startActivity(intent);
 
-    private AdapterView.OnItemClickListener ecouterListeNavigation =
-            new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    String itemChoisi = parent.getItemAtPosition(position).toString();
-                    String message = "Item : " + itemChoisi;
+        }
+    };
+    private AdapterView.OnItemSelectedListener ecouterSpinner = new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                    Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                    Intent intent = null;
-                    switch (position){
-                        case 0:
-                            intent = new Intent(MainActivity.this, Calculer_acceuil.class);
-                            break;
+            nomReseau = parent.getItemAtPosition(position).toString();
+            positions = position;
 
-                        case 1:
-                            intent = new Intent(MainActivity.this, ConifereActivity.class);
-                            break;
+        }
 
-                        case 2:
-                            intent = new Intent(MainActivity.this, Activite_3.class);
-                            break;
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
 
-                        default:
-                            break;
-                    }
-                    if (intent != null) {
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent);
-                    }
-                    drawerLayout.closeDrawers();
-                }
+        }
+    };
+    // méthode qui écoute la selection de l'activité dans le drawerlayout
+    private AdapterView.OnItemClickListener ecouterListeNavigation = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Intent intent = null;
 
-            };
+            switch (position) {
+                case 0:
+                    intent = new Intent(Activite_3.this, Calculer_acceuil.class);
+                    break;
+                case 1:
+                    intent = new Intent(Activite_3.this, ConifereActivity.class);
+                case 2:
+                    intent = new Intent(Activite_3.this, Activite_3.class);
+            }
+            if (intent != null){
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+
+            drawerLayout.closeDrawers();
+        }
+    };
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState){
@@ -110,14 +135,14 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.menuAccueil:
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent = new Intent(Activite_3.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 traiter = true;
                 break;
 
             case R.id.menuAide:
-                AlertDialog.Builder boiteAlerte = new AlertDialog.Builder(MainActivity.this);
+                AlertDialog.Builder boiteAlerte = new AlertDialog.Builder(Activite_3.this);
 
                 boiteAlerte.setTitle(R.string.action_aide);
                 boiteAlerte.setIcon(R.drawable.ic_info_aide);

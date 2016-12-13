@@ -140,12 +140,12 @@ public class Calcule_2 extends AppCompatActivity {
 
 
     }
-// méthode qui écoute les differents choix du drawerlayout
+
+    // méthode qui écoute la selection de l'activité dans le drawerlayout
     private AdapterView.OnItemClickListener ecouterListeNavigation = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             Intent intent = null;
-            String itemChoisi = parent.getItemAtPosition(position).toString();
 
             switch (position) {
                 case 0:
@@ -153,6 +153,8 @@ public class Calcule_2 extends AppCompatActivity {
                     break;
                 case 1:
                     intent = new Intent(Calcule_2.this, ConifereActivity.class);
+                case 2:
+                    intent = new Intent(Calcule_2.this, Activite_3.class);
             }
             if (intent != null){
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

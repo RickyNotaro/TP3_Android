@@ -1,7 +1,18 @@
 package com.rickynotaro.android.tp3;
+/**
+ * Auteurs : Ricky Notaro-Garcia
+ * Fichier : ConifereDeuxActivity.java
+ * Date    : 12 décembre 2016
+ * Cours   : 420-254-MO (TP3 Android)
+ */
 
-import android.app.Activity;
-import android.content.Context;
+/**
+ * Classe contenant la gestion de la première activité "Conifère".
+ *
+ * Cette activité permet à l'utilisateur de sélectionné une forme d'aiguille pour passer à
+ * la première activité du Conifere.
+ *
+ */
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -17,7 +28,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -213,6 +223,7 @@ public class ConifereDeuxActivity extends AppCompatActivity {
                             break;
 
                         case 2:
+                            intent = new Intent(ConifereDeuxActivity.this, Activite_3.class);
                             break;
 
                         default:

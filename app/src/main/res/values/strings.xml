@@ -21,6 +21,9 @@
     <string name="aide_choix_conifere">Observez-bien les aiguilles et faites votre choix.\n\nBouton Retour pour revenir à l\'écran précédent.\n\nIcône pour revenir à l\'écran d\'accueil.\n\nMenu en haut à gauche pour choisir une activité.</string>
     <string name="aide_web_conifere">Consulter la page web du conifère.\n\nBouton Back pour revenir à l\'écran précédent.\n\nIcône pour revenir à l\'écran d\'accueil.\n\nMenu en haut à gauche pour choisir une activité.</string>
 
+    <string name="sous_titre_activite3">Choisir un reseaux social</string>
+    <string name="aide_web_social">Consulter la page web du réseau Social.\n\nBouton Back pour revenir à l\'écran précédent.\n\nIcône pour revenir à l\'écran d\'accueil.\n\nMenu en haut à gauche pour choisir une activité.</string>
+
     <string name="warning_infos_pret">Entrez toutes les informations.\nLes valeurs doivent être supérieures à 0.</string>
     <string name="aide_pret">Entrez toutes les informations.\n\nBouton Calculer pour afficher les résultats du prêt.\n\nIcône pour revenir à l\'écran d\'accueil.\n\nMenu en haut à gauche pour choisir une activité.</string>
 
@@ -54,5 +57,6 @@
     <string name="choix_effacer_montant">Effacer le montant</string>
     <string name="choix_effacer_interet">Effacer l\'intérêt</string>
     <string name="choix_effacer_montant_interet">Effacer le montant et l\'intérêt</string>
+    <string name="bouton_ouvrir_page">Ouvrir le site web</string>
 
 </resources>

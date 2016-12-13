@@ -4,7 +4,7 @@
     <string-array name="tab_activites">
         <item>Calculer un prêt</item>
         <item>Identifier un conifère</item>
-        <item>Nom de la troisième activité</item>
+        <item>Réseaux Sociaux</item>
         </string-array>
 
     <string-array name="tab_duree">
@@ -112,6 +112,24 @@
     <string-array name="tab_web_coniferes_ecailles">
         <item>https://fr.wikipedia.org/wiki/Thuya</item>
         <item>https://fr.wikipedia.org/wiki/Genévrier</item>
+    </string-array>
+
+    <string-array name="tab_reseaux_sociaux">
+        <item>Facebook</item>
+        <item>Twitter</item>
+        <item>Tumblr</item>
+        <item>Reddit</item>
+        <item>Instagram</item>
+        <item>LinkedIn</item>
+    </string-array>
+
+    <string-array name="tab_web_reseaux_sociaux">
+        <item>https://facebook.com</item>
+        <item>https://twitter.com/</item>
+        <item>https://tumblr.com/</item>
+        <item>https://www.reddit.com/</item>
+        <item>https://www.instagram.com/</item>
+        <item>https://www.linkedin.com/</item>
     </string-array>
 
 </resources>

@@ -65,10 +65,12 @@
             android:layout_height="wrap_content"
             android:drawablePadding="5dp"
             android:padding="5dp"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal"
-            style="@style/base_texte"/>
+            style="@style/base_texte"
+            />
 
 
     </LinearLayout>
