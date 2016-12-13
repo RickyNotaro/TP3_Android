@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = null;
                     switch (position){
                         case 0:
-                            intent = new Intent(MainActivity.this, PretActivity.class);
+                            intent = new Intent(MainActivity.this, Calculer_acceuil.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                             break;

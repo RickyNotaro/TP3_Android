@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Effacer_montant"
+        android:title="@string/choix_effacer_montant"
+        ></item>
+    <item
+        android:id="@+id/Effacer_interet"
+        android:title="@string/choix_effacer_interet"
+        />
+    <item
+        android:id="@+id/Effacer_montant_interet"
+        android:title="@string/choix_effacer_montant_interet"
+        />
+</menu>

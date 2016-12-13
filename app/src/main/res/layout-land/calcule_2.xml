@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="@string/titre_info_montant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Titre_pret"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="14dp"
+                android:id="@+id/infoMontant" />
+
+            <TextView
+                android:text="@string/titre_info_interet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/infoMontant"
+                android:layout_alignLeft="@+id/infoMontant"
+                android:layout_alignStart="@+id/infoMontant"
+                android:layout_marginTop="17dp"
+                android:id="@+id/infoTaux" />
+
+            <TextView
+                android:text="@string/titre_info_duree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/infoTaux"
+                android:layout_alignLeft="@+id/infoTaux"
+                android:layout_alignStart="@+id/infoTaux"
+                android:layout_marginTop="18dp"
+                android:id="@+id/infoDure" />
+
+            <TextView
+                android:text="@string/titre_versement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/infoDure"
+                android:layout_alignLeft="@+id/infoDure"
+                android:layout_alignStart="@+id/infoDure"
+                android:layout_marginTop="16dp"
+                android:id="@+id/infoVersement" />
+
+            <TextView
+                android:text="@string/titre_interet_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/infoVersement"
+                android:layout_alignLeft="@+id/infoVersement"
+                android:layout_alignStart="@+id/infoVersement"
+                android:layout_marginTop="22dp"
+                android:id="@+id/infoInteret" />
+
+            <TextView
+                android:text="@string/titre_pret_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/infoInteret"
+                android:layout_alignLeft="@+id/infoInteret"
+                android:layout_alignStart="@+id/infoInteret"
+                android:layout_marginTop="24dp"
+                android:id="@+id/infoPretTotal" />
+
+            <TextView
+                android:text="@string/titre_infos_pret"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/Titre_pret"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:text="@string/txt_btn_retour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/BoutonRetourCalcul"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/infoPretTotal"
+                android:layout_alignStart="@+id/infoPretTotal"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/list_navigation"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#FFEEEEEE"
+        android:choiceMode="singleChoice"
+        android:entries="@array/tab_activites" />
+</android.support.v4.widget.DrawerLayout>

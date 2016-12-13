@@ -1,3 +1,19 @@
+/**
+ * Auteurs : Ricky Notaro-Garcia
+ * Fichier : ConifereActivity.java
+ * Date    : 12 décembre 2016
+ * Cours   : 420-254-MO (TP3 Android)
+ */
+
+/**
+ * Classe contenant la gestion de la première activité "Conifère".
+ *
+ * Cette activité permet à l'utilisateur de sélectionné une forme d'aiguille pour passer à
+ * la deuxième activité du Conifere.
+ *
+ */
+
+
 package com.rickynotaro.android.tp3;
 
 import android.app.Activity;
@@ -22,31 +38,40 @@ public class ConifereActivity extends AppCompatActivity {
     // Récupérer le nom du package.
     public static final String NOM_PACKAGE = ConifereActivity.class.getPackage().getName();
 
+    // Contient les différents clé de l'intent.
     public static final String CLE_CHOIX = NOM_PACKAGE + ".CHOIX";
+    public static final String CLE_NOM = NOM_PACKAGE + ".NOM";
+    public static final String CLE_IMAGE = NOM_PACKAGE + ".IMAGE";
+    public static final String CLE_LIENWEB = NOM_PACKAGE + ".LIENWEB";
+
+    // Variantes des codes de requêtes
     public static final int REQUETE_CHOIX_CONIFERE = 1;
 
+    // Contiendra les valeurs retounées par l'activitée conifèreDeux.
+    private String nomConifere;
+    private String nomResConifere;
+    private String lienConifere;
+
+    // Contient les composants du drawer.
     private ListView listeNavigation;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private Resources res;
 
+    // Contient différentes composants de l'interface Graphique
     private ListView idListeChoix;
     private TextView idResultat;
 
-    private String conifereChoisi;
-
+    // P
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_conifere);
-
-
-        //Début Récupération composants
         preparerDrawer();
         recupererComposants();
     }
 
+    // Récupére les différents composant ayant besoin de traitement.
     private void recupererComposants() {
         res = getResources();
         idListeChoix = (ListView) findViewById( R.id.listview_Choix );
@@ -77,6 +102,8 @@ public class ConifereActivity extends AppCompatActivity {
 
     }
 
+
+
     //Définition de la variable qui écoute la liste des coniferes
     private AdapterView.OnItemClickListener ecouterListViewConifere =
             new AdapterView.OnItemClickListener() {
@@ -91,6 +118,9 @@ public class ConifereActivity extends AppCompatActivity {
                     // appelant et le nom de l'activité.
                     Intent intent = new Intent(ConifereActivity.this, ConifereDeuxActivity.class);
                     intent.putExtra(CLE_CHOIX, position);
+                    intent.putExtra(CLE_NOM, nomConifere);
+                    intent.putExtra(CLE_IMAGE, nomResConifere);
+                    intent.putExtra(CLE_LIENWEB, lienConifere);
                     startActivityForResult(intent,REQUETE_CHOIX_CONIFERE);
                 }
             };
@@ -106,7 +136,7 @@ public class ConifereActivity extends AppCompatActivity {
                     Intent intent = null;
                     switch (position){
                         case 0:
-                            intent = new Intent(ConifereActivity.this, PretActivity.class);
+                            intent = new Intent(ConifereActivity.this, Calculer_acceuil.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                             break;
@@ -135,17 +165,34 @@ public class ConifereActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data ){
         if (requestCode == REQUETE_CHOIX_CONIFERE){
-            if (resultCode == Activity.RESULT_OK){
-            //ConifereDeuxActivity.CLE_NOM
-                idResultat.setText(R.string.mess_res_arbre + getIntent().getStringExtra(ConifereDeuxActivity.CLE_NOM));
-               // idResultat.setCompoundDrawablesWithIntrinsicBounds( getIntent().getStringExtra(ConifereDeuxActivity.CLE_IMAGE), 0, 0, 0 );
-                // TODO: 2016-12-09 Document 14 page 34 && PDF page 21. (Récupérer les données et les afficher dans le textview.
-            }else {
-
+            if (resultCode == Activity.RESULT_OK) {
+                nomConifere = data.getStringExtra(CLE_NOM);
+                nomResConifere = data.getStringExtra(CLE_IMAGE);
+                lienConifere = data.getStringExtra(CLE_LIENWEB);
+                String texte = (res.getString(R.string.mess_res_arbre) + "\n\n" + nomConifere);
+                int resId = res.getIdentifier(nomResConifere, "drawable", getPackageName());
+                idResultat.setText(texte);
+                idResultat.setCompoundDrawablesWithIntrinsicBounds(resId, 0, 0, 0);
+                idResultat.setOnClickListener(ecouterTextViewConifere);
+            } else {
+                idResultat.setText("");
+                idResultat.setCompoundDrawablesWithIntrinsicBounds(
+                        android.R.color.transparent, 0, 0, 0);
             }
 
         }
     }
+
+
+    private View.OnClickListener ecouterTextViewConifere = new View.OnClickListener() {
+        @Override
+        public void onClick(View vue) {
+            Intent intent = new Intent(ConifereActivity.this, ConifereWikiActivity.class);
+            intent.putExtra(CLE_NOM, nomConifere);
+            intent.putExtra(CLE_LIENWEB, lienConifere);
+            startActivity(intent);
+        }
+    };
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState){

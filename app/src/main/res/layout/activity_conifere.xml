@@ -54,19 +54,23 @@
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="140dp"
             android:choiceMode="singleChoice"
             android:entries="@array/tab_choix_aiguilles"
             android:id="@+id/listview_Choix" />
 
         <TextView
             android:id="@+id/item_conifere"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="5dp"
             android:padding="5dp"
             android:textColor="#000000"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            style="@style/base_texte"
+            />
 
 
     </LinearLayout>

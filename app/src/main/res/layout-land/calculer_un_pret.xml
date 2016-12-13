@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="37dp"
+                android:id="@+id/Titre_pret"
+                android:text="@string/titre_pret" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:layout_alignTop="@+id/titre_info_montant"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/entrerMontant"
+                android:hint="@string/hint_montant" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/titre_info_durePret"
+                android:layout_alignRight="@+id/bouttonEffacer"
+                android:layout_alignEnd="@+id/bouttonEffacer"
+                android:id="@+id/DurePret" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/entrerTaux"
+                android:inputType="numberDecimal"
+                android:layout_below="@+id/entrerMontant"
+                android:layout_alignLeft="@+id/entrerMontant"
+                android:layout_alignStart="@+id/entrerMontant"
+                android:hint="@string/hint_interet" />
+
+            <TextView
+                android:text="@string/titre_info_montant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="33dp"
+                android:layout_marginEnd="33dp"
+                android:layout_marginTop="16dp"
+                android:id="@+id/titre_info_montant"
+                android:layout_below="@+id/Titre_pret"
+                android:layout_toLeftOf="@+id/Titre_pret"
+                android:layout_toStartOf="@+id/Titre_pret" />
+
+            <TextView
+                android:text="@string/titre_info_interet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/titreInfoTaux"
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
+                android:layout_above="@+id/entrerTaux"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                android:text="@string/txt_btn_calculer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/boutonCalculer"
+                android:layout_marginBottom="34dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/titre_info_durePret"
+                android:layout_alignEnd="@+id/titre_info_durePret" />
+
+            <Button
+                android:text="@string/txt_btn_effacer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bouttonEffacer"
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
+                android:layout_alignBaseline="@+id/boutonCalculer"
+                android:layout_alignBottom="@+id/boutonCalculer"
+                android:layout_toRightOf="@+id/Titre_pret"
+                android:layout_toEndOf="@+id/Titre_pret" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner_dure"
+                android:entries="@array/tab_duree"
+                android:layout_below="@+id/DurePret"
+                android:layout_alignLeft="@+id/entrerTaux"
+                android:layout_alignStart="@+id/entrerTaux" />
+
+            <TextView
+                android:text="@string/titre_info_duree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/titre_info_durePret"
+                android:layout_alignBottom="@+id/entrerTaux"
+                android:layout_alignLeft="@+id/titreInfoTaux"
+                android:layout_alignStart="@+id/titreInfoTaux" />
+
+        </RelativeLayout>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/list_navigation"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#FFEEEEEE"
+        android:choiceMode="singleChoice"
+        android:entries="@array/tab_activites" />
+</android.support.v4.widget.DrawerLayout>
